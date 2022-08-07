@@ -3,7 +3,16 @@
 # /tests/context_manager/test_lab2.py
 
 class Timer:
-    pass
+    def __init__ (self):
+        self.time = 1
+        print("init")
+        
+    def __enter__(self):
+        print("enter")
+        return self
+        
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("exit")
 
 
 

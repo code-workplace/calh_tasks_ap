@@ -7,6 +7,15 @@ gdzie nazwa_funkcji jest nazwą dekorowanej funkcji.
 """
 from functools import wraps
 
+def require_typing(func):    
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if (len(func.__annotations__) != len(func.__code__.co_varnames) + 1):
+            return "Add typing to function " + func.__name__ +", please!"
+        else:
+            result = func(*args, **kwargs)
+            return result
+    return wrapper
 
-def require_typing(fn):
-    pass
+
+
