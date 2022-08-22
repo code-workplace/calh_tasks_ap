@@ -1,4 +1,4 @@
-from context_manager.lab1 import MyContextManager
+from src.context_manager.lab1 import MyContextManager
 
 
 def test_my_context_manager():

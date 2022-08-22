@@ -8,4 +8,5 @@ funkcji na przykład:
 
 
 def even_numbers(n):
-    pass
+    generator_comprehension = (i for i in range(n + 1) if i % 3 and not i % 2)
+    return generator_comprehension
