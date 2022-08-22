@@ -4,5 +4,10 @@
 # Zaimplementuj context manager za pomocą klasy
 
 class MyContextManager:
-    pass
 
+    def __enter__(self):
+        print('__enter__')
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print(f'__exit__({exc_type}, {exc_val}, {exc_tb})')
